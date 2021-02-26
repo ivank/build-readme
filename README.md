@@ -1,6 +1,6 @@
 # Build Readme
 
-Replace each example block with an actual file from examples
+A cli tool to replace each example block with an actual file from examples
 
 > [examples/simple.ts](examples/simple.ts)
 
