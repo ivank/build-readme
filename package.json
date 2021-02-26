@@ -1,0 +1,49 @@
+{
+  "name": "@ikerin/build-readme",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "description": "Replace each example block with an actual file from examples",
+  "author": "Ivan Kerin <ikerin@gmail.com>",
+  "repository": "git@github.com:ivank/build-readme.git",
+  "homepage": "https://github.com/ivank/build-readme#readme",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/jest": "^26.0.20",
+    "@types/node": "^14.14.28",
+    "@typescript-eslint/eslint-plugin": "^4.15.1",
+    "@typescript-eslint/parser": "^4.15.1",
+    "@yarnpkg/pnpify": "^2.4.0",
+    "eslint": "^7.20.0",
+    "eslint-config-prettier": "^7.2.0",
+    "jest": "^26.6.3",
+    "prettier": "^2.2.1",
+    "ts-jest": "^26.5.1",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.1.2"
+  },
+  "bin": "bin/build-readme",
+  "scripts": {
+    "build-readme": "node -r ts-node/register src/cli.ts",
+    "build": "pnpify tsc --declaration",
+    "test": "jest test --runInBand",
+    "lint": "F='{src,test}/**/*.ts' && prettier --check $F && eslint $F"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "tsx",
+      "json",
+      "node"
+    ],
+    "testURL": "http://localhost/",
+    "testEnvironment": "node"
+  }
+}
