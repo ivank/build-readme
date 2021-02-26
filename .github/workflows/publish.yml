@@ -12,11 +12,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
-        with:
-          registry-url: 'https://registry.npmjs.org'
-          node-version: 14
-          always-auth: true
       - uses: actions/cache@v2
         with:
           path: '.yarn/cache'
@@ -25,6 +20,9 @@ jobs:
       - run: yarn build
       - run: yarn lint
       - run: yarn test
+      - run: yarn config set npmRegistries --json '{"https://registry.yarnpkg.com":{"npmAuthToken":"${NODE_AUTH_TOKEN}","npmAlwaysAuth":true}}'
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.npm_token}}
       - run: yarn npm publish --access=public
         env:
           NODE_AUTH_TOKEN: ${{secrets.npm_token}}
