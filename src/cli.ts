@@ -6,16 +6,21 @@ const readmePath = process.argv[2];
 const url = process.argv[3];
 const text = readFileSync(readmePath, 'utf8');
 
-const { content, replacements } = buildReadme(readmePath, text, cwd(), url);
+try {
+  const { content, replacements } = buildReadme(readmePath, text, cwd(), url);
 
-writeFileSync(readmePath, content, 'utf8');
+  writeFileSync(readmePath, content, 'utf8');
 
-if (replacements.length) {
-  console.log(`Updating ${readmePath}`);
-  for (const { name, filename } of replacements) {
-    console.log(`Updated [${name}](${filename})`);
+  if (replacements.length) {
+    console.log(`Updating ${readmePath}`);
+    for (const { name, filename } of replacements) {
+      console.log(`Updated [${name}](${filename})`);
+    }
+  } else {
+    console.error(`No examples found in ${readmePath}`);
+    process.exit(1);
   }
-} else {
-  console.error(`No examples found in ${readmePath}`);
+} catch (error) {
+  console.error(error.message);
   process.exit(1);
 }

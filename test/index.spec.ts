@@ -14,8 +14,4 @@ describe('Document', () => {
   it.each(readmes)('Should parse readme %s', (name, content) => {
     expect(buildReadme(name, content, join(__dirname, 'readmes'), urlMap[name])).toMatchSnapshot(name);
   });
-
-  it.each(readmes)('Should be able to parse inner folders for %s', (name, content) => {
-    expect(buildReadme(join('readmes', name), content, __dirname, urlMap[name])).toMatchSnapshot(name);
-  });
 });

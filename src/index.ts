@@ -49,9 +49,7 @@ export const buildReadme = (
     replacements.push({ name, filename });
 
     const resolvedFilename = removeAnchorHash(
-      url && filename.includes(url)
-        ? filename.replace(url, dirname(join(dir, readmePath)))
-        : join(dirname(join(dir, readmePath)), filename),
+      url && filename.includes(url) ? filename.replace(url, dir) : join(dirname(join(dir, readmePath)), filename),
     );
 
     if (!existsSync(resolvedFilename)) {
