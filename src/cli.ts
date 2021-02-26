@@ -17,5 +17,6 @@ if (replacements.length) {
     console.log(`Updated [${name}](${filename})`);
   }
 } else {
-  console.log(`No examples found in ${readmePath}`);
+  console.error(`No examples found in ${readmePath}`);
+  process.exit(1);
 }
