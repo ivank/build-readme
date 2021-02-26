@@ -40,6 +40,7 @@ const extractSection = (section: string, content: string): { hash: string; conte
 export const buildReadme = (
   readmePath: string,
   text: string,
+  dir: string,
   url?: string,
 ): { content: string; replacements: { name: string; filename: string }[] } => {
   const replacements: { name: string; filename: string }[] = [];
@@ -48,11 +49,13 @@ export const buildReadme = (
     replacements.push({ name, filename });
 
     const resolvedFilename = removeAnchorHash(
-      url && filename.includes(url) ? filename.replace(url, dirname(readmePath)) : join(dirname(readmePath), filename),
+      url && filename.includes(url)
+        ? filename.replace(url, dirname(join(dir, readmePath)))
+        : join(dirname(join(dir, readmePath)), filename),
     );
 
     if (!existsSync(resolvedFilename)) {
-      throw new Error(`File ${resolvedFilename} does not exist in ${dirname(readmePath)}`);
+      throw new Error(`File ${resolvedFilename} does not exist in ${dir}`);
     }
     const content = readFileSync(resolvedFilename, 'utf-8');
 

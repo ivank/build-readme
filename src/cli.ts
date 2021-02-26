@@ -1,13 +1,12 @@
 import { buildReadme } from '.';
 import { readFileSync, writeFileSync } from 'fs';
 import { cwd } from 'process';
-import { isAbsolute, join } from 'path';
 
-const readmePath = isAbsolute(process.argv[2]) ? process.argv[2] : join(cwd(), process.argv[2]);
+const readmePath = process.argv[2];
 const url = process.argv[3];
 const text = readFileSync(readmePath, 'utf8');
 
-const { content, replacements } = buildReadme(readmePath, text, url);
+const { content, replacements } = buildReadme(readmePath, text, cwd(), url);
 
 writeFileSync(readmePath, content, 'utf8');
 
