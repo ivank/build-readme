@@ -989,6 +989,17 @@ console.log(join(b));
 console.log('other', c);
 return param + c + d;
 \`\`\`
+
+> [simple-4.yaml:(id)](files/simple-4.yaml#L8-L15)
+
+\`\`\`yaml
+- name: 'id'
+  in: 'path'
+  required: true
+  schema:
+    type: 'string'
+    pattern: '\\\\d+'
+\`\`\`
 ",
   "replacements": Array [
     Object {
@@ -1006,6 +1017,10 @@ return param + c + d;
     Object {
       "filename": "files/simple-3.ts#L1-L2",
       "name": "simple.ts:(other)",
+    },
+    Object {
+      "filename": "files/simple-4.yaml#L1-L2",
+      "name": "simple-4.yaml:(id)",
     },
   ],
 }
