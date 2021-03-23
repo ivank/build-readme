@@ -1,0 +1,16 @@
+openapi: '3.0.0'
+info:
+  title: 'Simple Example'
+  version: 1.0.0
+paths:
+  /user/{id}:
+    get:
+      parameters:
+        # << id
+        - name: 'id'
+          in: 'path'
+          required: true
+          schema:
+            type: 'string'
+            pattern: '\d+'
+        # id

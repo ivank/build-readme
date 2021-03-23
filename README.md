@@ -32,6 +32,22 @@ resolve({});
 
 This way you can keep your examples as executable files, and automatically update your readme files when you make changes, so none of your examples get out of date.
 
+There is also support for `#` style comments
+
+> [examples/oapi.yaml:(test-section)](examples/oapi.yaml)
+
+```yaml
+---
+openapi: 3.0.0
+info:
+  # << test-section
+  title: Simple API
+  version: 1.0.0
+  # test-section
+servers:
+  - url: 'http: //localhost:3333'
+```
+
 ## Running the tests
 
 You'll need to start a postgres instance to run the tests for some of the exmaples

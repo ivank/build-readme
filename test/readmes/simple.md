@@ -31,3 +31,9 @@ test text
 ```ts
 
 ```
+
+> [simple-4.yaml:(id)](files/simple-4.yaml#L1-L2)
+
+```yaml
+
+```

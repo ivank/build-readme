@@ -9,7 +9,9 @@ const removeAnchorHash = (str: string): string => str.replace(/\#.*$/, '');
 
 const extractSection = (section: string, content: string): { hash: string; content: string } => {
   const escapedSection = section.replace('-', '\\-');
-  const result = content.match(new RegExp(`\/\/ << ${escapedSection}\n+(.*)\n+([ ]*)\/\/ ${escapedSection}`, 'msi'));
+  const result = content.match(
+    new RegExp(`(?:\/\/|#) << ${escapedSection}\n+(.*)\n+([ ]*)(?:\/\/|#) ${escapedSection}`, 'msi'),
+  );
 
   if (!result) {
     throw new Error(`Section ${section} does not exist.`);
