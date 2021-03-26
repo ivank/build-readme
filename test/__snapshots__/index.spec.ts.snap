@@ -1001,26 +1001,29 @@ return param + c + d;
     pattern: '\\\\d+'
 \`\`\`
 
-> [simple-5.ts:(my-section)](files/simple-5.ts#L5-L11)
+> [simple-5.ts:(my-section)](files/simple-5.ts#L5-L12)
 
 \`\`\`ts
 console.log(join(b));
 
 const c = 2 + 2;
+console.log(c);
 \`\`\`
 
-> [simple-5.ts:(my-section-2)](files/simple-5.ts#L9-L11)
+> [simple-5.ts:(my-section-2)](files/simple-5.ts#L9-L12)
 
 \`\`\`ts
 const c = 2 + 2;
+console.log(c);
 \`\`\`
 
-> [simple-5.ts:(my-full-section)](files/simple-5.ts#L4-L12)
+> [simple-5.ts:(my-full-section)](files/simple-5.ts#L4-L13)
 
 \`\`\`ts
 console.log(join(b));
 
 const c = 2 + 2;
+console.log(c);
 \`\`\`
 ",
   "replacements": Array [
