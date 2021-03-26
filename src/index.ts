@@ -27,6 +27,7 @@ const extractSection = (section: string, content: string): { hash: string; conte
     content: indentedContent
       .split('\n')
       .map((line) => line.substr(indent.length))
+      .filter((row) => !row.match(/\/\/ (<< )?[0-9a-zA-Z\-]+/))
       .join('\n')
       .trim(),
   };

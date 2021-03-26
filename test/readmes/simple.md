@@ -37,3 +37,21 @@ test text
 ```yaml
 
 ```
+
+> [simple-5.ts:(my-section)](files/simple-5.ts#L1-L2)
+
+```ts
+
+```
+
+> [simple-5.ts:(my-section-2)](files/simple-5.ts#L1-L2)
+
+```ts
+
+```
+
+> [simple-5.ts:(my-full-section)](files/simple-5.ts#L1-L2)
+
+```ts
+
+```

@@ -1000,6 +1000,28 @@ return param + c + d;
     type: 'string'
     pattern: '\\\\d+'
 \`\`\`
+
+> [simple-5.ts:(my-section)](files/simple-5.ts#L5-L11)
+
+\`\`\`ts
+console.log(join(b));
+
+const c = 2 + 2;
+\`\`\`
+
+> [simple-5.ts:(my-section-2)](files/simple-5.ts#L9-L11)
+
+\`\`\`ts
+const c = 2 + 2;
+\`\`\`
+
+> [simple-5.ts:(my-full-section)](files/simple-5.ts#L4-L12)
+
+\`\`\`ts
+console.log(join(b));
+
+const c = 2 + 2;
+\`\`\`
 ",
   "replacements": Array [
     Object {
@@ -1021,6 +1043,18 @@ return param + c + d;
     Object {
       "filename": "files/simple-4.yaml#L1-L2",
       "name": "simple-4.yaml:(id)",
+    },
+    Object {
+      "filename": "files/simple-5.ts#L1-L2",
+      "name": "simple-5.ts:(my-section)",
+    },
+    Object {
+      "filename": "files/simple-5.ts#L1-L2",
+      "name": "simple-5.ts:(my-section-2)",
+    },
+    Object {
+      "filename": "files/simple-5.ts#L1-L2",
+      "name": "simple-5.ts:(my-full-section)",
     },
   ],
 }
