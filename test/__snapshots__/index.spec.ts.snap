@@ -967,7 +967,7 @@ test text
 
 # Something else
 
-> [simple.ts:(my-section)](files/simple-2.ts#L4-L6)
+> [simple.ts:(my-section)](files/simple-2.ts#L5-L7)
 
 \`\`\`ts
 console.log(join(b));
@@ -977,20 +977,20 @@ test text
 
 # Something other
 
-> [simple.ts:(my-section)](files/simple-3.ts#L4-L6)
+> [simple.ts:(my-section)](files/simple-3.ts#L5-L7)
 
 \`\`\`ts
 console.log(join(b));
 \`\`\`
 
-> [simple.ts:(other)](files/simple-3.ts#L13-L18)
+> [simple.ts:(other)](files/simple-3.ts#L14-L19)
 
 \`\`\`ts
 console.log('other', c);
 return param + c + d;
 \`\`\`
 
-> [simple-4.yaml:(id)](files/simple-4.yaml#L8-L15)
+> [simple-4.yaml:(id)](files/simple-4.yaml#L9-L16)
 
 \`\`\`yaml
 - name: 'id'
@@ -1001,7 +1001,7 @@ return param + c + d;
     pattern: '\\\\d+'
 \`\`\`
 
-> [simple-5.ts:(my-section)](files/simple-5.ts#L5-L12)
+> [simple-5.ts:(my-section)](files/simple-5.ts#L6-L13)
 
 \`\`\`ts
 console.log(join(b));
@@ -1010,14 +1010,14 @@ const c = 2 + 2;
 console.log(c);
 \`\`\`
 
-> [simple-5.ts:(my-section-2)](files/simple-5.ts#L9-L12)
+> [simple-5.ts:(my-section-2)](files/simple-5.ts#L10-L13)
 
 \`\`\`ts
 const c = 2 + 2;
 console.log(c);
 \`\`\`
 
-> [simple-5.ts:(my-full-section)](files/simple-5.ts#L4-L13)
+> [simple-5.ts:(my-full-section)](files/simple-5.ts#L5-L14)
 
 \`\`\`ts
 console.log(join(b));

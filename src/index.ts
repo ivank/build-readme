@@ -19,7 +19,7 @@ const extractSection = (section: string, content: string): { hash: string; conte
   const [match, indentedContent, indent] = result;
   const prefixContent = content.substr(0, result.index) + 1;
 
-  const linesStart = countLines(prefixContent);
+  const linesStart = countLines(prefixContent) + 1;
   const linesEnd = linesStart + countLines(match);
 
   return {
